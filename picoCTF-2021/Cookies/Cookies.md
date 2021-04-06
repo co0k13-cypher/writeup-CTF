@@ -24,7 +24,7 @@ OK ta thử nhập vào "snickerdoodle" xem sao thì nó đưa ta đến một t
 
 Vì title là cookie nên ta sẽ vào devtool và kiểm tra cookie của nó và kết quả :
 
-![IMG](image/cookie.png)
+![IMG](image/cookie2.png)
 
 Ta có thể thấy có một cookie **name : 1** .Mình thử thay đổi giá trị của name thành một số khác thì thấy web trả về một loại thông báo khác vậy khả năng ta có thể inject vào cookie name này bằng cách *brute force* value .
 
