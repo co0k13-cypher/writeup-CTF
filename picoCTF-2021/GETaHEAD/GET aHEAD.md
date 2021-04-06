@@ -12,7 +12,7 @@ Check out tools like Burpsuite to modify your requests and look at the responses
 
 ## Solution
 
-Ta di v�o ph�n t�ch code html :
+Ta đi vào phân tích code html :
 
 ```
 <!doctype html>
@@ -55,11 +55,11 @@ Ta di v�o ph�n t�ch code html :
 </html>
 ```
 
-Ch�ng ta c� th? th?y web c� 2 l?a ch?n d� l� **Red** di v?i **GET** v� **Blue** th� di v?i **POST** . K?t h?p v?i hint ta di d?n k?t lu?n l� s? g?i di request v?i m?t phuong th?c kh�c GET V� POST .
-�? � v�o ti�u d? *Get aHead* t�i c� th? bi?t m�nh c?n g?i request d� v?i phuong th?c HEAD l�n server d? get flag .
-�?u ti�n ta s? b?t request v?i Burp Suite sau d� l� g?i v�o repeat v� s?a GET > HEAD g?i l?i request v� c� flag .
+Chúng ta có thể thấy web có 2 lựa chọn đó là **Red** đi với **GET** và **Blue** thì đi với **POST** . Kết hợp với hint ta đi đến kết luận là sẽ gửi đi request với một phương thức khác GET VÀ POST .
+Ðể ý vào tiêu đề *Get aHead* tôi có thể biết mình cần gửi request đó đi với phương thức HEAD lên server để get flag .
+Ð?u tiên ta sẽ bắt request với Burp Suite sau dó là g?i vào repeat và s?a GET > HEAD gửi lại request và có flag .
 
-![IMG](/image/getahead.png) 
+![IMG](image/getahead.png) 
 
 ## Flag 
 
