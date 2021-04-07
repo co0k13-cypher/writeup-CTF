@@ -11,3 +11,5 @@ for i in range(20):
 		print('-----Binggo-----')
 		print(flag)
 		break
+
+		
