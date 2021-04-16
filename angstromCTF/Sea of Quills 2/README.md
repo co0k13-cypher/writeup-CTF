@@ -63,7 +63,7 @@ end
 
 ```
 
-Tương tự như phần 1 nhiệm vụ của chúng ta là phải thực hiệ inject sql vào trường cols . Tuy nhiên phần 2 này có một số sự khác biệt :
+Tương tự như phần 1 nhiệm vụ của chúng ta là phải thực hiện inject sql vào trường cols . Tuy nhiên phần 2 này có một số sự khác biệt :
 
 > blacklist = ["-", "/", ";", "'", "\"", "flag"]
 > Limit lenght < 24 chars
