@@ -12,7 +12,7 @@ Server code is attached.
 
 Sau khi đăng nhập vào một tài khoản do mình tự tạo ta sẽ thấy xuất hiện hai bài test :
 
-![img](img9.png)
+![img](img/img9.png)
 
 Có thể thấy một bài test đã hết hạn (13/5/2021), và một bài test sẽ hết hạn vào (19/5/2021) tức là lúc event này kết thúc .
 ```
