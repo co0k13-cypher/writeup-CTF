@@ -64,9 +64,10 @@ Sau khi lang thang trên payloadsallthethinks(https://github.com/swisskyrepo/Pay
   hớn hở mở file này nhưng đời ko như là mơ *NOT FLAG TRY HARDER*
   + Sau một quá trình đi lung tung thì nhìn lại source code , ko bt tác giả filter cái data:// làm gì và với việc LFI cũng có thể dùng data:// để RCE thì mk nghĩ ôi thôi chắc là hướng này rồi .
 
-Một chút về data_URIs **data:[<mediatype>][;base64],<data>** , ta có thể thấy rõ cấu trúc của nó ở đây :
-	+ Đầu tiên là cái mime để xác định kiểu dữ liệu nếu bỏ qua sẽ mặc định là text/plain
-	+ ;Base64 để encode những dữ liệu ở dạng nhị phân nếu dữ liệu của bạn ở dạng văn bản thì có thể bỏ qua .
+Một chút về data_URIs ```data:[<mediatype>][;base64],<data>``` , ta có thể thấy rõ cấu trúc của nó ở đây :
+
+  + Đầu tiên là cái mime để xác định kiểu dữ liệu nếu bỏ qua sẽ mặc định là text/plain .
+  + ;Base64 để encode những dữ liệu ở dạng nhị phân nếu dữ liệu của bạn ở dạng văn bản thì có thể bỏ qua .
 
 Dựa vào các đặc trung trên ta có payloads sau :
 > payloads : data://text/plain,<?php phpinfo();?>
