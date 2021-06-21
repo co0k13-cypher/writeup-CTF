@@ -56,7 +56,7 @@ File Inclusion cho phép kẻ tấn công có thể xem các tệp trên máy ch
 Sau khi lang thang trên payloadsallthethinks(https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#wrapper-phpfilter) mk tìm được một số payloads khả thi .
 
   + Đầu tiên mk nghĩ tới việc dùng *php://filter/convert.base64-encode/resource=* để đọc source file nhưng do không scan được nên vấn đề là sẽ ko biết được có file nào ẩn không mà đọc có mỗi file index.php thì được cho rồi :)) 
-  + Sau ý tưởng đầu thất bại mk có tìm thử 1 số file mặc định hay đặc trung thì tìm đc file robots.txt có dạng :
+  + Sau ý tưởng đầu thất bại mk có tìm thử 1 số file mặc định hay đặc trưng thì tìm đc file robots.txt có dạng :
   ```
   User-agent: *
   Disallow: /flag123456789.php
@@ -69,12 +69,12 @@ Một chút về data_URIs ```data:[<mediatype>][;base64],<data>``` , ta có th�
   + Đầu tiên là cái mime để xác định kiểu dữ liệu nếu bỏ qua sẽ mặc định là text/plain .
   + ;Base64 để encode những dữ liệu ở dạng nhị phân nếu dữ liệu của bạn ở dạng văn bản thì có thể bỏ qua .
 
-Dựa vào các đặc trung trên ta có payloads sau :
-> payloads : data://text/plain,<?php phpinfo();?>
+Dựa vào các đặc trưng trên ta có payloads sau :
+```payloads : data://text/plain,<?php phpinfo();?>```
 
 Sau khi hiển thị được phpinfo() tưởng chừng giải quyết được vấn đề tuy nhiên sau khi tiến hành rce lại ko đc :
 
-> payloads : data://text/plain,<?php echo shell_exec('ls');?>
+```payloads : data://text/plain,<?php echo shell_exec('ls');?>```
 
 Và mình mất khá nhiều thời gian cho lỗi này sau một hồi betak thì tác giả hint là cần encode url payloads vì một số kí tự đặc biệt sẽ khiến paylaods ko chạy đúng cách . Thế nhưng vẫn ko được lần này là do server chạy win mà mk dùng command linux mặc dù khi phpinfo mk có thấy rõ ràng server là win (gà vl).
 
