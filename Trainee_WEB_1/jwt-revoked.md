@@ -68,8 +68,8 @@ Hàm này sẽ kiểm tra token có trong blacklist hay ko nếu không thì nó
 Nhận định ban đầu để pass thì ta cần có một token ko có trong blacklist nhưng ngay từ khi được tạo thì token đã được thêm vào blacklist và chỉ đc xóa đi khi hết hạn khi ấy thì nó lại không còn hợp lệ nữa khá khó khăn để giải quyết vấn đề này .
 
 Tuy nhiên có một lối thoát đó là:
-	+ Tất cả các phần của JWT đều được encode base64 .
-	+ Base64 có một đặc trưng đó là trong quá trình mã hóa sẽ xảy ra một số trường hợp thừa thiếu bit để giải quyết vấn đề này người ta tạo ra phần đệm *=* để xác định chiều dài mã hóa và ko làm ảnh hưởng đến việc mã hóa .(https://en.wikipedia.org/wiki/Base64). Thực ra mk cũng chưa hiểu lắm cơ mà đại loại là ta có thể thêm dấu *=* vào cuối chuỗi base64 mà ko làm thay đổi nó.
++ Tất cả các phần của JWT đều được encode base64 .
++ Base64 có một đặc trưng đó là trong quá trình mã hóa sẽ xảy ra một số trường hợp thừa thiếu bit để giải quyết vấn đề này người ta tạo ra phần đệm *=* để xác định chiều dài mã hóa và ko làm ảnh hưởng đến việc mã hóa .(https://en.wikipedia.org/wiki/Base64). Thực ra mk cũng chưa hiểu lắm cơ mà đại loại là ta có thể thêm dấu *=* vào cuối chuỗi base64 mà ko làm thay đổi nó.
 Từ hai điều trên chúng ta chỉ cần thêm đấu bằng vào cuối token nhận đc từ enpoint /login là bypass thành công.
 
 Trước tiên là code python tạo client request với post lấy token (lưu ý là phải có "Content-Type": "application/json" ):
