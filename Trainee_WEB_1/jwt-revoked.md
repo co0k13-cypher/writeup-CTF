@@ -69,7 +69,7 @@ Nhận định ban đầu để pass thì ta cần có một token ko có trong 
 
 Tuy nhiên có một lối thoát đó là:
 + Tất cả các phần của JWT đều được encode base64 .
-+ Base64 có một đặc trưng đó là trong quá trình mã hóa sẽ xảy ra một số trường hợp thừa thiếu bit để giải quyết vấn đề này người ta tạo ra phần đệm *=* để xác định chiều dài mã hóa và ko làm ảnh hưởng đến việc mã hóa .(https://en.wikipedia.org/wiki/Base64). Thực ra mk cũng chưa hiểu lắm cơ mà đại loại là ta có thể thêm dấu *=* vào cuối chuỗi base64 mà ko làm thay đổi nó.
++ Đầu tiên ta cần biết về kí tự đệm (=) trong base64 , đây là kí tự giúp đáp ứng các nhu càu về độ dài mà không mang ý nghĩa .Tỉ lệ mã hóa trong base64 là cứ 3 byte tương ứng với 4 kí tự như vậy trong một số trường hợp chiều dài mã hóa là một số lẻ thì phần dữ liệu cuối chuỗi sẽ bị thiếu . Vì lí do trên họ thêm phần đệm để thỏa mãn yêu cầu về chiều dài cũng như xác định nơi kết thúc của luồng dữ liệu mà không làm thay đổi dữ liệu .(https://qastack.vn/programming/4080988/why-does-base64-encoding-require-padding-if-the-input-length-is-not-divisible-by)  
 
 Từ hai điều trên chúng ta chỉ cần thêm đấu bằng vào cuối token nhận đc từ enpoint /login là bypass thành công.
 
