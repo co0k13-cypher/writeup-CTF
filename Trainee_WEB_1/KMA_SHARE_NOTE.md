@@ -4,7 +4,7 @@
 
 ![img](img/img8.png)
 
-Web có hai chức năng chính đó là tạo một note và sau đó nó sẽ cấp cho ta một ID đẻ xem lại note đó .
+Web có hai chức năng chính đó là tạo một note và sau đó nó sẽ cấp cho ta một ID để xem lại note đó .
 
 Không có quá nhiều thứ để khai thác tôi quyết định dirsearch và tìm được **/source**.
 ```
@@ -93,7 +93,7 @@ Dễ thấy chức năng /add-note đang thỏa các điều kiện nói trên ,
 
 Payload : ${JSON.stringify(process.env)}
 
-Payload này sẽ làm nhiệm vụ in ra tất cả các biến môi trường trong web , **process.env** là một object chứa các biến môi trường và hàm **JSON.stringify** làm công việc chuyển object tnahf chuỗi.
+Payload này sẽ làm nhiệm vụ in ra tất cả các biến môi trường trong web , **process.env** là một object chứa các biến môi trường và hàm **JSON.stringify** làm công việc chuyển object thành chuỗi.
 
 ![img](img/img9.png)
 
@@ -104,6 +104,7 @@ KCSC{lodash_template_injection_so_ezzzz}
 ## Document
 
 https://hackerone.com/reports/904672
+
 
 
 
