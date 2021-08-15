@@ -74,6 +74,7 @@ $exploit = new Y(new Y(new X('flag')));
 // O:1:"Y":1:{s:6:"secret";O:1:"Y":1:{s:6:"secret";O:1:"X":1:{s:7:"cleanup";s:4:"flag";}}}
 ```
 Việc lồng ghép này sẽ khiến hàm X gặp lỗi và gọi đến **__destruct()** mà bỏ qua hàm **__construct()** , điều này dẫn đến việc hai lệnh if được thực hiện và in ra đồng thời 'No!' và flag.
+   
 
 Exploit.php
 
@@ -97,6 +98,14 @@ echo base64_encode(serialize($exploit));
 // TzoxOiJZIjoxOntzOjY6InNlY3JldCI7TzoxOiJZIjoxOntzOjY6InNlY3JldCI7TzoxOiJYIjoxOntzOjc6ImNsZWFudXAiO3M6NDoiZmxhZyI7fX19
 
 ```
+
+Cụ thể thứ tự gọi các magic method sau khi unserialize sẽ như sau :
+
+1. Trước tiên khi bước vào quá trình unserialize method **__weakup()** sẽ được gọi đến làm nhiệm vụ echo ra biến *secret* (lúc này là 'flag').
+2. Tiếp theo nó sẽ di chuyển xuống và gọi đến method **__toString()** tại đây $printflag sẽ được gán lại thành true khong những vậy nó còn trả về class X với đối số $cleanup được gán bằng địa chỉ của $secret (lúc này $cleanup='flag').
+3. Ở bước cuối cùng nó sẽ gọi đến method **__destruct()** trong X , do $cleanup = 'flag' nên 'No!' sẽ được in ra bởi lệnh if đầu và $printflag=true dẫn đến việc $FLAG được in ra .
+
+![img](img/img14.png)
 
 Cuối cùng ta sẽ gửi lên header X_PAYLOAD bao gồm mã base64 exploit phía trên , có nhiều cách để thực hiện công việc này ở đây mk dùng curl .
 

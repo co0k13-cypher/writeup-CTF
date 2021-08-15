@@ -2,7 +2,7 @@
 
 ## Solution
 
-Chall này liên quan đến WordPress, loay hoay trên web một lúc mình tìm thấy trang login và đông thời có hint weak password. Điều này cho thấy để đăng nhập được ta cần làm theo hướng brute force chứ không phải sqli. Trước tiên ta sẽ dùng wpscan tool để tìm các user .
+Chall này liên quan đến WordPress, loay hoay trên web một lúc mình tìm thấy trang login và đồng thời có hint weak password. Điều này cho thấy để đăng nhập được ta cần làm theo hướng brute force chứ không phải sqli. Trước tiên ta sẽ dùng wpscan tool để tìm các user .
 
 Command : wpscan --url http://18.142.106.71/ --enumerate u
 
